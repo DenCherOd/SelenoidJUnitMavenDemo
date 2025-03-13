@@ -1,4 +1,4 @@
-# JUnit, Selenide, Maven
+# JUnit, Selenide, Maven, Selenoid
 
 This project is a set of automated tests for web applications, utilizing JUnit for testing with Selenide and the Page Object Model. The project is configured with Maven to manage dependencies and build the project.
 
