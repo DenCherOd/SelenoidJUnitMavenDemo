@@ -125,6 +125,47 @@ $$(".product").shouldHave(size(5));        // Check if 5 products are displayed
 | **Supported Languages** | Java only                    | Supports Java, Python, C#, etc. |
 ---
 
+# Selenoid: Scalable Selenium Grid
+
+## What is Selenoid?
+
+[Selenoid](https://aerokube.com/selenoid/latest/) is a lightweight Selenium Grid implementation using Docker. It allows running browsers in isolated containers, making test execution scalable, fast, and efficient.
+
+### 🔹 Why Use Selenoid?
+
+-  **Fast and Lightweight** – Uses Docker containers to launch browsers quickly.
+-  **Supports Multiple Browsers** – Chrome, Firefox, Opera, and more.
+-  **Parallel Execution** – Run multiple tests simultaneously.
+-  **Video Recording** – Record test sessions for debugging.
+-  **Live UI Access** – Connect to running sessions via VNC.
+-  **Efficient Resource Usage** – Uses minimal system resources compared to a traditional Selenium Grid.
+
+---
+
+## 🛠️ How to Set Up Selenoid with Docker Compose
+
+## 📌 Prerequisites
+Before setting up Selenoid, ensure you have the following installed:
+- [Docker](https://docs.docker.com/get-docker/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+
+##  SetUp Steps
+1. Use the following command in the console
+```java
+docker compose up -d
+```
+2. Once the services are running, verify Selenoid with http://localhost:8080
+
+# 🔄 Selenoid vs. Selenium Grid
+
+| Feature              | Selenoid                         | Selenium Grid                   |
+|----------------------|--------------------------------|---------------------------------|
+| **Setup Complexity** | Easy (Docker Compose)        | Complex (requires manual setup) |
+| **Resource Usage**   | Low (efficient Docker usage) | High (dedicated infrastructure) |
+| **Parallel Execution** | Built-in                   | Requires additional setup       |
+| **Performance**      | Fast (lightweight containers) | Can be slower (full VMs)        |
+| **UI Access (VNC)**  | Yes (built-in)               | No (requires extra setup)       |
+
 ## ✅ Pros & Cons
 
 ### ✅ Gradle
@@ -169,3 +210,23 @@ $$(".product").shouldHave(size(5));        // Check if 5 products are displayed
 - ❌ Limited support for multiple programming languages (primarily Java)
 - ❌ Smaller community compared to Selenium
 - ❌ Less flexibility for complex custom configurations
+---
+### ✅ Selenium Grid
+✔️ Supports multiple programming languages (Java, Python, C#, etc.)  
+✔️ Works with real browsers (no need for containers)  
+✔️ Can distribute tests across multiple nodes  
+✔️ Supports various test frameworks (JUnit, TestNG, etc.)  
+❌ Complex setup and configuration  
+❌ Requires dedicated infrastructure (e.g., VMs, physical machines)  
+❌ No built-in UI for monitoring test sessions (requires extra tools)  
+❌ Managing browser versions can be challenging
+
+### ✅ Selenoid
+✔️ Lightweight and fast (Docker-based)  
+✔️ Easy to set up (single `docker-compose` command)  
+✔️ Built-in video recording and UI for test monitoring (via VNC)  
+✔️ Automatic browser version management with `cm` tool  
+✔️ Supports parallel execution natively  
+❌ Requires Docker installation  
+❌ Limited to browsers available as Docker images  
+❌ Less flexible than Selenium Grid in terms of distributed testing setups  
